@@ -1,6 +1,78 @@
 <!doctype html>
 <html lang="pt-br">
 
+<style>
+    .conteiner-principal {
+        position: relative;
+        padding-left: 0;
+        padding-right: 0;
+
+        background-color: #0b0c23;
+    }
+
+    .conteiner-segundario {
+        padding-bottom: 2rem;
+    }
+
+    .navbar {
+        background-color: rgb(169, 91, 149, 0.6);
+        transition: background-color 0.3s;
+    }
+
+    .navbar-solido {
+        background-color: #a95b95;
+    }
+
+    .rodape {
+        background-color: #a95b95;
+    }
+
+    .titulos {
+        color: #c6bfee;
+        font-family: 'Arial Narrow'
+    }
+
+    .textos {
+        color: #dad8e9;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .botoes {
+        background-color: #a95b95;
+    }
+
+    .zoom-conteiner {
+        overflow: hidden;
+    }
+
+    .zoom-conteiner img {
+        transition: transform 4s ease;
+    }
+
+    .zoom-conteiner:hover img {
+        transform: scale(1.2);
+    }
+
+    .conteineri-img-opacidade {
+        position: relative;
+
+    }
+
+    .img-opacidade {
+
+        object-fit: cover;
+    }
+
+    .opacidade-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(169, 91, 149, 0.4);
+    }
+</style>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,205 +81,227 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        window.addEventListener('scroll',
+            function () {
+                var navbar = document.getElementById('navbar');
+                if (window.scrollY > 0) {
+                    navbar.classList.add('navbar-solido');
+                } else {
+                    navbar.classList.remove('navbar-solido');
+                }
+            });
+    </script>
+
 </head>
 
 <body>
-    <section class="container-fluid bg-primary" style="position: relative; min-height: 100%;">
-        <section class="container-fluid" style="padding-bottom: 2rem;">
-            <section class="container-fluid" style="padding-bottom: 2rem;">
-                <section class="d-block px-3 py-2 text-center text-bold bg-primary" style="margin-top: 70px;">
-                </section>
-                <!--NAVEGAÇÃO-->
-                <header>
-                    <nav class="navbar navbar-expand-lg fixed-top bg-white">
-                        <section class="section container-fluid">
-                            <a class="navbar-brand" href="#"><img src="#" class="img-thumbnail border-primary" alt=""
-                                    width="50" height="50"></a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navVagas" aria-controls="navbarSupportedContent" aria-expanded="false"
-                                aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <section class="section navbar-collapse" id="navVagas">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item">
-                                        <a class="nav-link active text-center" href="index.html">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="perfil.html">Perfil</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="vagas.html">Vagas</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="contato.html">Contato</a>
-                                    </li>
-                                </ul>
-                                <section>
-                                    <section class="row">
-                                        <section class="col" style="padding-right: 25px;">
-                                            <span class="bi bi-facebook"><a href="#" class="link-dark"
-                                                    style="text-decoration:none"></a></span>
-                                        </section>
-                                        <section class="col" style="padding-right: 25px;">
-                                            <span class="bi bi-instagram"><a href="#" class="link-dark"
-                                                    style="text-decoration:none"></a></span>
-                                        </section>
-                                        <section class="col" style="padding-right: 25px;">
-                                            <span class="bi bi-linkedin"><a href="#" class="link-dark"
-                                                    style="text-decoration:none"></a></span>
-                                        </section>
-                                        <section class="col" style="padding-right: 25px;">
-                                            <span class="bi bi-twitter"><a href="#" class="link-dark"
-                                                    style="text-decoration:none"></a></span>
-                                        </section>
-                                    </section>
-                                </section>
-                    </nav>
-                </header>
-
-                <main>
-                    <!--VAGAS-->
-                    <section class="section container-fluid" style="background-color: #7f99f8;">
-                        <section class="section container">
-                            <section class="row">
-                                <p class="h1 text-center"
-                                    style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-                                    Vagas em Destaques</p>
-                            </section>
-                            <section class="row">
-                                <section class="col-sm-4">
-                                    <section class="card border-primary mb-3">
-                                        <section class="card-body">
-                                            <img src="imgVagas/1.png" class="card-img-top img-fluid" alt="">
-                                            <p class="card-title text-center"></p>
-                                            <p class="card-text text-center"></p>
-                                            <section class="mt-2" style="text-align: center;">
-                                                <a href="#" class="btn btn-primary">Inscreva-se</a>
-                                            </section>
-                                        </section>
-                                    </section>
-                                </section>
-                                <section class="col-sm-4">
-                                    <section class="card border-primary mb-3">
-                                        <section class="card-body">
-                                            <img src="imgVagas/2.png" class="card-img-top img-fluid" alt="">
-                                            <p class="card-title text-center"></p>
-                                            <p class="card-text text-center"></p>
-                                            <section class="mt-2" style="text-align: center;">
-                                                <a href="#" class="btn btn-primary">Inscreva-se</a>
-                                            </section>
-                                        </section>
-                                    </section>
-                                </section>
-                                <section class="col-sm-4">
-                                    <section class="card border-primary mb-3">
-                                        <section class="card-body">
-                                            <img src="imgVagas/3.png" class="card-img-top img-fluid" alt="">
-                                            <p class="card-title text-center"></p>
-                                            <p class="card-text text-center"></p>
-                                            <section class="mt-2" style="text-align: center;">
-                                                <a href="#" class="btn btn-primary">Inscreva-se</a>
-                                            </section>
-                                        </section>
-                                    </section>
-                                </section>
-                            </section>
-                            <section class="row">
-                                <section class="col-sm-4">
-                                    <section class="card border-primary mb-3">
-                                        <section class="card-body">
-                                            <img src="imgVagas/4.png" class="card-img-top img-fluid" alt="">
-                                            <p class="card-title text-center"></p>
-                                            <p class="card-text text-center"></p>
-                                            <section class="mt-2" style="text-align: center;">
-                                                <a href="#" class="btn btn-primary">Inscreva-se</a>
-                                            </section>
-                                        </section>
-                                    </section>
-                                </section>
-                                <section class="col-sm-4">
-                                    <section class="card border-primary mb-3">
-                                        <section class="card-body">
-                                            <img src="imgVagas/5.png" class="card-img-top img-fluid" alt="">
-                                            <p class="card-title text-center"></p>
-                                            <p class="card-text text-center"></p>
-                                            <section class="mt-2" style="text-align: center;">
-                                                <a href="#" class="btn btn-primary">Inscreva-se</a>
-                                            </section>
-                                        </section>
-                                    </section>
-                                </section>
-                                <section class="col-sm-4">
-                                    <section class="card border-primary mb-3">
-                                        <section class="card-body">
-                                            <img src="imgVagas/6.png" class="card-img-top img-fluid" alt="">
-                                            <p class="card-title text-center"></p>
-                                            <p class="card-text text-center"></p>
-                                            <section class="mt-2" style="text-align: center;">
-                                                <a href="#" class="btn btn-primary">Inscreva-se</a>
-                                            </section>
-                                        </section>
-                                    </section>
-                                </section>
-                            </section>
-                        </section>
-                    </section>
-                    <!--PESQUISA VAGAS-->
-                    <form>
-                        <section class="section container-fluid mt-4 pb-1" style="background-color: #7f99f8;">
-                            <section class="container mt-3 mb-3 text-center">
+    <div class="conteiner-principal">
+        <div class="conteiner-segundario">
+            <!--NAVEGAÇÃO-->
+            <header>
+                <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+                    <section class="section container-fluid">
+                        <a class="navbar-brand" href="#"><img src="#" class="img-thumbnail border-primary" alt=""
+                                width="50" height="50"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navVagas" aria-controls="navbarSupportedContent" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <section class="section navbar-collapse" id="navVagas">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-center" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="perfil.html">Perfil</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="vagas.html">Vagas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="contato.html">Contato</a>
+                                </li>
+                            </ul>
+                            <div>
                                 <section class="row">
-                                    <section class="col mt-3">
-                                        <input type="text" class="form-control" id="vagas"
-                                            placeholder="Cargo, palavra-chave ou empresa" checked>
+                                    <section class="col" style="padding-right: 25px;">
+                                        <span class="bi bi-facebook"><a href="#" class="link-dark"
+                                                style="text-decoration:none"></a></span>
                                     </section>
-                                    <section class="col mt-3">
-                                        <input type="text" class="form-control" id="localidade" placeholder="Localidade"
-                                            checked>
+                                    <section class="col" style="padding-right: 25px;">
+                                        <span class="bi bi-instagram"><a href="#" class="link-dark"
+                                                style="text-decoration:none"></a></span>
                                     </section>
-                                    <section class="col mt-3">
-                                        <button type="submit" class="btn btn-primary">Encontre a sua vaga</button>
+                                    <section class="col" style="padding-right: 25px;">
+                                        <span class="bi bi-linkedin"><a href="#" class="link-dark"
+                                                style="text-decoration:none"></a></span>
+                                    </section>
+                                    <section class="col" style="padding-right: 25px;">
+                                        <span class="bi bi-twitter"><a href="#" class="link-dark"
+                                                style="text-decoration:none"></a></span>
                                     </section>
                                 </section>
-                                <span>Não encontrou a sua vaga? Cadastre o seu currículo grátis!</span>
-                                <span>Leva apenas alguns minutos!</span>
-                                <section class="mt-2" style="text-align: center;">
-                                    <a href="#" class="btn btn-primary">Cadastre Aqui</a>
+                            </div>
+                        </section>
+                    </section>
+                </nav>
+            </header>
+            <main>
+                <div class="zoom-conteiner conteineri-img-opacidade">
+                    <img class="img-opacidade" src="ImgPaginas/topoVagas.png" alt="Imagem para zoom" class="img-fluid"
+                        style="width: 100%;">
+                    <div class="opacidade-img"></div>
+                </div>
+                <!--VAGAS-->
+                <div>
+                    <div class="container">
+                        <section class="row">
+                            <h1 class="titulos text-center" style="margin-top: 100px; margin-bottom: 100px;">VAGAS EM
+                                DESTAQUES</h1>
+                        </section>
+                        <section class="row">
+                            <section class="col-sm-4">
+                                <section class="card border-primary mb-3">
+                                    <section class="card-body">
+                                        <img src="imgVagas/1.png" class="card-img-top img-fluid" alt="">
+                                        <p class="card-title text-center"></p>
+                                        <p class="card-text text-center"></p>
+                                        <section class="mt-2 text-center">
+                                            <button type="submit" class="botoes">Inscreva-se</button>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-sm-4">
+                                <section class="card border-primary mb-3">
+                                    <section class="card-body">
+                                        <img src="imgVagas/2.png" class="card-img-top img-fluid" alt="">
+                                        <p class="card-title text-center"></p>
+                                        <p class="card-text text-center"></p>
+                                        <section class="mt-2 text-center">
+                                            <button type="submit" class="botoes">Inscreva-se</button>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-sm-4">
+                                <section class="card border-primary mb-3">
+                                    <section class="card-body">
+                                        <img src="imgVagas/3.png" class="card-img-top img-fluid" alt="">
+                                        <p class="card-title text-center"></p>
+                                        <p class="card-text text-center"></p>
+                                        <section class="mt-2 text-center">
+                                            <button type="submit" class="botoes">Inscreva-se</button>
+                                        </section>
+                                    </section>
                                 </section>
                             </section>
                         </section>
-                    </form>
-            </section>
-            </main>
-            <!--FOOTER-->
-            <footer class="container-fluid mt-5" style="position: absolute;">
-                <secction class="mt-1 pt-1 pb-1 footer">
-                    <section class="container">
-                        <section class="row mt-1">
-                            <section class="col about-company text-center">
-                                <p>Siga Nossas Redes Sociais</p>
-                                <p>
-                                    <span class="bi bi-facebook"><a href="#" class="link-dark"
-                                            style="text-decoration:none">Facebook</a></span>
-                                    <span class="bi bi-instagram"><a href="#" class="link-dark"
-                                            style="text-decoration:none">Instagram</a></span>
-                                    <span class="bi bi-linkedin"><a href="#" class="link-dark"
-                                            style="text-decoration:none">Linkedin</a></span>
-                                    <span class="bi bi-twitter"><a href="#" class="link-dark"
-                                            style="text-decoration:none">Twitter</a></span>
-                                </p>
+                        <section class="row">
+                            <section class="col-sm-4">
+                                <section class="card border-primary mb-3">
+                                    <section class="card-body">
+                                        <img src="imgVagas/4.png" class="card-img-top img-fluid" alt="">
+                                        <p class="card-title text-center"></p>
+                                        <p class="card-text text-center"></p>
+                                        <section class="mt-2 text-center">
+                                            <button type="submit" class="botoes">Inscreva-se</button>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-sm-4">
+                                <section class="card border-primary mb-3">
+                                    <section class="card-body">
+                                        <img src="imgVagas/5.png" class="card-img-top img-fluid" alt="">
+                                        <p class="card-title text-center"></p>
+                                        <p class="card-text text-center"></p>
+                                        <section class="mt-2 text-center">
+                                            <button type="submit" class="botoes">Inscreva-se</button>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-sm-4">
+                                <section class="card border-primary mb-3">
+                                    <section class="card-body">
+                                        <img src="imgVagas/6.png" class="card-img-top img-fluid" alt="">
+                                        <p class="card-title text-center"></p>
+                                        <p class="card-text text-center"></p>
+                                        <section class="mt-2 text-center">
+                                            <button type="submit" class="botoes">Inscreva-se</button>
+                                        </section>
+                                    </section>
+                                </section>
                             </section>
                         </section>
-                        <section class="row mt-1">
-                            <section class="col copyright text-center">
-                                <p class=""><small class="text-dark-50">© 2023. Todos os Direitos Reservados.</small>
-                                </p>
+                    </div>
+                </div>
+                <!--PESQUISA VAGAS-->
+                <form>
+                    <section class="section mt-4 pb-1">
+                        <section class="container mt-3 mb-3 text-center">
+                            <section class="row">
+                                <section class="col mt-3">
+                                    <input type="text" class="form-control" id="vagas"
+                                        placeholder="Cargo, palavra-chave ou empresa" checked>
+                                </section>
+                                <section class="col mt-3">
+                                    <input type="text" class="form-control" id="localidade" placeholder="Localidade"
+                                        checked>
+                                </section>
+                            </section>
+                            <section class="row">
+                                <section class="col mt-3">
+                                    <button type="submit" class="botoes">Encontre a sua vaga</button>
+                                </section>
+                            </section>
+                            <section class="row">
+                                <section class="col mt-3 textos">
+                                    <span>Não encontrou a sua vaga? Cadastre o seu currículo grátis!</span>
+                                    <span>Leva apenas alguns minutos!</span>
+                                </section>
+                            </section>
+                            <section class="row">
+                                <section class="col mt-3">
+                                    <a href="perfil.html">
+                                        <button type="submit" class="botoes">Cadastre Aqui</button>
+                                    </a>
+                                </section>
                             </section>
                         </section>
                     </section>
-            </footer>
-        </section>
+                </form>
+            </main>
+        </div>
+        <!--FOOTER-->
+        <footer class="container-fluid rodape">
+            <div class="footer">
+                <section class="row">
+                    <section class="col about-company text-center mt-3">
+                        <p>
+                            <span class="bi bi-facebook"><a href="#" class="link-dark"
+                                    style="text-decoration:none">Facebook</a></span>
+                            <span class="bi bi-instagram"><a href="#" class="link-dark"
+                                    style="text-decoration:none">Instagram</a></span>
+                            <span class="bi bi-linkedin"><a href="#" class="link-dark"
+                                    style="text-decoration:none">Linkedin</a></span>
+                            <span class="bi bi-twitter"><a href="#" class="link-dark"
+                                    style="text-decoration:none">Twitter</a></span>
+                        </p>
+                    </section>
+                </section>
+                <section class="row">
+                    <section class="col copyright text-center">
+                        <p class=""><small class="text-dark-50">© 2023. Todos os Direitos Reservados.</small></p>
+                    </section>
+                </section>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
