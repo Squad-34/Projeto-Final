@@ -1,107 +1,149 @@
-/* INICIO INDEX */
-.conteiner-principal {
+/* INICIO INDEX INDEX / PERFIL / VAGAS / CONTATO */
+.conteiner-principal
+
+/*  DEFINIÇÕES DO CONTEINER PRINCIPAL */
+    {
     position: relative;
     padding-left: 0;
     padding-right: 0;
     background-color: #0b0c23;
 }
 
-.conteiner-segundario {
+.conteiner-segundario
+
+/* DISTANCIA DA BORDA INFERIOR DO PADDING */
+    {
     padding-bottom: 2rem;
 }
 
-.navbar {
+.navbar
+
+/* DEFINIÇÕES DA BARRA DE NAVEGAÇÃO */
+    {
     background-color: rgb(169, 91, 149, 0.6);
     transition: background-color 0.3s;
 }
 
-.navbar-solido {
+.navbar-solido
+
+/* COR DA BARRA DE NAVEGAÇÃO QUANDO ESTIVER FIXA */
+    {
     background-color: #a95b95;
 }
 
-.rodape {
+.rodape
+
+/* COR DO RODAPÉ */
+    {
     background-color: #a95b95;
 }
 
-.titulos {
+.titulos
+
+/* COR E FONTE DOS TITULOS */
+    {
     color: #c6bfee;
     font-family: 'Arial Narrow';
 
 }
 
-.textos {
+.textos
+
+/* COR E FONTE DOS TEXTOS */
+    {
     color: #dad8e9;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.botoes {
+.botoes
+
+/* COR E DOS BOTÕES */
+    {
     background-color: #a95b95;
 }
 
-.zoom-conteiner {
+.zoom-conteiner
+
+/* ZOOM NA IMAGEM DO TOPO DAS PAGINAS E DOS CARDS NO FINAL DA PAGINA INDEX */
+    {
     overflow: hidden;
 }
 
-.zoom-conteiner img {
+.zoom-conteiner img
+
+/* VELOCIDADE DO ZOOM */
+    {
     transition: transform 4s ease;
 }
 
-.zoom-conteiner:hover img {
+.zoom-conteiner:hover img
+
+/* ESCALA DO ZOOM */
+    {
     transform: scale(1.2);
 }
 
-.conteiner-texto {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
+.img-com-texto
 
-.imagem-texto {
+/* DEFINIÇÕES PARA CENTRALIZAR O TEXTO DENTRO DA IMAGEM DO CARDS NO INDEX*/
+    {
+    position: relative;
     max-width: 100%;
+}
+
+.img-com-texto img
+
+/* DEFINIÇÕES PARA CENTRALIZAR O TEXTO DENTRO DA IMAGEM DO CARDS NO INDEX*/
+    {
+    width: 100%;
     height: auto;
+    display: block;
 }
 
-.texto {
+.texto-sobre-img /* DEFINIÇÕES PARA CENTRALIZAR O TEXTO DENTRO DA IMAGEM DO CARDS NO INDEX*/ {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #dad8e9;
+    
+}
+
+.texto-centro-conteiner /* DEFINIÇÕES PARA CENTRALIZAR O TEXTOS E INPUTS NO CENTRO DO CONTEINER*/ {
+    height: 150px;
     text-align: center;
-    font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif';
 }
 
-.rows-cards {
-    height: 455px;
-}
-
-.cols-cards {
-    position: relative;
-    width: 100%;
-    height: 455px;
-}
-
-.div-cards {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-}
 /* FIM INDEX */
 
-/* INICIO PERFIL */
-.margem-centralizar {
-    margin-left: 300px;
-    margin-right: 300px;
-}
+/* INICIO PERFIL / VAGAS / CONTATO */
+.conteiner-img-opacidade
 
-.conteineri-img-opacidade {
+/* DEFINIÇÕES PARA DIMINUIR A OPACIDADE DO BACKGROUND*/
+    {
     position: relative;
 
 }
 
-.img-opacidade {
+.img-opacidade
 
+/* DEFINIÇÕES PARA DIMINUIR A OPACIDADE DO BACKGROUND*/
+    {
     object-fit: cover;
 }
 
-.opacidade-img {
+.opacidade-img
+
+/* DEFINIÇÕES PARA DIMINUIR A OPACIDADE DO BACKGROUND*/
+    {
     position: absolute;
     top: 0;
     left: 0;
@@ -109,6 +151,13 @@
     height: 100%;
     background-color: rgb(169, 91, 149, 0.4);
 }
-/* FIM PERFIL */
 
-/* INICIO VAGAS */
+.largura-input
+
+/* DEFINIÇÕES DA LARGURA DO INPUT TYPE TEXT */
+    {
+    width: 600px;
+    text-align: center;
+}
+
+/* FIM PERFIL / VAGAS / CONTATO */
