@@ -1,0 +1,114 @@
+/* INICIO INDEX */
+.conteiner-principal {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #0b0c23;
+}
+
+.conteiner-segundario {
+    padding-bottom: 2rem;
+}
+
+.navbar {
+    background-color: rgb(169, 91, 149, 0.6);
+    transition: background-color 0.3s;
+}
+
+.navbar-solido {
+    background-color: #a95b95;
+}
+
+.rodape {
+    background-color: #a95b95;
+}
+
+.titulos {
+    color: #c6bfee;
+    font-family: 'Arial Narrow';
+
+}
+
+.textos {
+    color: #dad8e9;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.botoes {
+    background-color: #a95b95;
+}
+
+.zoom-conteiner {
+    overflow: hidden;
+}
+
+.zoom-conteiner img {
+    transition: transform 4s ease;
+}
+
+.zoom-conteiner:hover img {
+    transform: scale(1.2);
+}
+
+.conteiner-texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.imagem-texto {
+    max-width: 100%;
+    height: auto;
+}
+
+.texto {
+    position: absolute;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.rows-cards {
+    height: 455px;
+}
+
+.cols-cards {
+    position: relative;
+    width: 100%;
+    height: 455px;
+}
+
+.div-cards {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+/* FIM INDEX */
+
+/* INICIO PERFIL */
+.margem-centralizar {
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.conteineri-img-opacidade {
+    position: relative;
+
+}
+
+.img-opacidade {
+
+    object-fit: cover;
+}
+
+.opacidade-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(169, 91, 149, 0.4);
+}
+/* FIM PERFIL */
+
+/* INICIO VAGAS */

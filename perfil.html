@@ -2,105 +2,27 @@
 <html lang="pt-br">
 
 <style>
-  .conteiner-principal {
-    position: relative;
-    padding-left: 0;
-    padding-right: 0;
-    background-color: #0b0c23;
-  }
-
-  .conteiner-segundario {
-    padding-bottom: 2rem;
-  }
-
-  .navbar {
-    background-color: rgb(169, 91, 149, 0.6);
-    transition: background-color 0.3s;
-  }
-
-  .navbar-solido {
-    background-color: #a95b95;
-  }
-
-  .rodape {
-    background-color: #a95b95;
-  }
-
-  .titulos {
-    color: #c6bfee;
-    font-family: 'Arial Narrow'
-  }
-
-  .textos {
-    color: #dad8e9;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-
-  .botoes {
-    background-color: #a95b95;
-  }
-
-  .margem-centralizar {
-    margin-left: 300px;
-    margin-right: 300px;
-  }
-
-  .zoom-conteiner {
-    overflow: hidden;
-  }
-
-  .zoom-conteiner img {
-    transition: transform 4s ease;
-  }
-
-  .zoom-conteiner:hover img {
-    transform: scale(1.2);
-  }
-
-  .conteineri-img-opacidade {
-    position: relative;
-
-  }
-
-  .img-opacidade {
-
-    object-fit: cover;
-  }
-
-  .opacidade-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(169, 91, 149, 0.4);
-  }
+  
 </style>
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projeto Final</title>
+  <!--BOOTSTRAP-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    window.addEventListener('scroll',
-      function () {
-        var navbar = document.getElementById('navbar');
-        if (window.scrollY > 0) {
-          navbar.classList.add('navbar-solido');
-        } else {
-          navbar.classList.remove('navbar-solido');
-        }
-      });
-  </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <!--ARQUIVO CSS-->
+  <link rel="stylesheet" type="text/css" href="stylecss.css">
 </head>
 
 <body>
+  <!--ARQUIVO JAVASCRIPT-->
+  <script src="javascript.js"></script>
   <div class="conteiner-principal">
     <div class="conteiner-segundario">
       <!--NAVEGAÇÃO-->
