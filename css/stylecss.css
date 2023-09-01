@@ -100,7 +100,10 @@
     display: block;
 }
 
-.texto-sobre-img /* DEFINIÇÕES PARA CENTRALIZAR O TEXTO DENTRO DA IMAGEM DO CARDS NO INDEX*/ {
+.texto-sobre-img
+
+/* DEFINIÇÕES PARA CENTRALIZAR O TEXTO DENTRO DA IMAGEM DO CARDS NO INDEX*/
+    {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -109,10 +112,13 @@
     border-radius: 5px;
     font-size: 16px;
     color: #dad8e9;
-    
+
 }
 
-.texto-centro-conteiner /* DEFINIÇÕES PARA CENTRALIZAR O TEXTOS E INPUTS NO CENTRO DO CONTEINER*/ {
+.texto-centro-conteiner
+
+/* DEFINIÇÕES PARA CENTRALIZAR O TEXTOS E INPUTS NO CENTRO DO CONTEINER*/
+    {
     height: 150px;
     text-align: center;
     display: flex;
@@ -120,6 +126,11 @@
     align-items: center;
     justify-content: center;
     font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif';
+}
+
+.bordas-thumb-logo {
+    border: 0.5px solid black;
+    border-radius: 10px;
 }
 
 /* FIM INDEX */
