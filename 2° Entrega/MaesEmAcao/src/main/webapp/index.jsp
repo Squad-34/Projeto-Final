@@ -1,0 +1,249 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>:: Mães em Ação ::</title>
+<!--BOOTSTRAP-->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+	crossorigin="anonymous" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" />
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+	crossorigin="anonymous"></script>
+<!--ARQUIVO CSS-->
+<link rel="stylesheet" type="text/css" href="/MaesEmAcao/assets/css/stylecss.css" />
+</head>
+
+<body>
+	<!--ARQUIVO JAVASCRIPT-->
+	<script src="/MaesEmAcao/assets/js/javascript.js"></script>
+	<div class="conteiner-principal">
+		<div class="conteiner-segundario">
+			<!--NAVEGAÇÃO-->
+			<header>
+				<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+					<div class="container-fluid">
+						<a class="navbar-brand" href="#"> <img
+							src="/MaesEmAcao/assets/img/logo/logo-sem-fundo.png" class="bordas-thumb-logo"
+							alt="" width="60" height="60" />
+						</a>
+						<button class="navbar-toggler" type="button"
+							data-bs-toggle="collapse" data-bs-target="#navVagas"
+							aria-controls="navbarSupportedContent" aria-expanded="false"
+							aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navVagas">
+							<ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+								<li class="nav-item"><a class="nav-link active"
+									href="index.html">Home</a></li>
+								<li class="nav-item"><a class="nav-link active"
+									href="perfil.html">Perfil</a></li>
+								<li class="nav-item"><a class="nav-link active"
+									href="vagas.html">Vagas</a></li>
+								<li class="nav-item"><a class="nav-link active"
+									href="contato.html">Contato</a></li>
+							</ul>
+							<div class="d-flex">
+								<a href="#" class="text-dark me-3"><i
+									class="bi bi-facebook"></i></a> <a href="#" class="text-dark me-3"><i
+									class="bi bi-instagram"></i></a> <a href="#" class="text-dark me-3"><i
+									class="bi bi-linkedin"></i></a> <a href="#" class="text-dark"><i
+									class="bi bi-twitter"></i></a>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</header>
+			<main>
+				<div class="zoom-conteiner">
+					<img src="/MaesEmAcao/assets/img/ImgPaginas/topoHome.png" alt="Imagem para zoom"
+						class="img-fluid" style="width: 100%" />
+				</div>
+
+				<!--CARDS-->
+				<div class="container mt-5">
+					<div class="row">
+						<div class="col-lg-6 col-md-12 img-com-texto mb-4 mb-lg-0">
+							<img src="/MaesEmAcao/assets/img/imgCards/1.png" class="img-fluid" />
+						</div>
+						<div class="col-lg-6 col-md-12 img-com-texto">
+							<img src="/MaesEmAcao/assets/img/imgCards/background.png" alt="Imagem"
+								class="img-fluid imagem-texto" />
+							<div class="texto-sobre-img">"Ultrices commodo luctus morbi
+								habitasse venenatis turpis lobortis blandit, curabitur etiam
+								taciti felis viverra pretium nibh orci lobortis"</div>
+						</div>
+					</div>
+					<div class="row mt-4">
+						<div class="col-lg-6 col-md-12 img-com-texto mb-4 mb-lg-0">
+							<img src="/MaesEmAcao/assets/img/imgCards/background.png" alt="Imagem"
+								class="img-fluid imagem-texto" />
+							<div class="texto-sobre-img">"Ultrices commodo luctus morbi
+								habitasse venenatis turpis lobortis blandit, curabitur etiam
+								taciti felis viverra pretium nibh orci lobortis"</div>
+						</div>
+						<div class="col-lg-6 col-md-12 img-com-texto">
+							<img src="/MaesEmAcao/assets/img/imgCards/2.png" class="img-fluid" />
+						</div>
+					</div>
+				</div>
+				<!--DESTAQUES VAGAS-->
+				<div>
+					<div class="container mt-5">
+						<section class="row">
+							<h1 class="titulos text-center">VAGAS EM DESTAQUES</h1>
+						</section>
+						<section class="row mt-5">
+							<section class="col-sm-4">
+								<section class="card border-primary mb-3">
+									<section class="card-body">
+										<img src="/MaesEmAcao/assets/img/imgVagas/1.png"
+											class="card-img-top img-fluid" alt="" />
+										<p class="card-title text-center"></p>
+										<p class="card-text text-center"></p>
+										<section class="mt-2 text-center">
+											<button type="submit" class="botoes">Inscreva-se</button>
+										</section>
+									</section>
+								</section>
+							</section>
+							<section class="col-sm-4">
+								<section class="card border-primary mb-3">
+									<section class="card-body">
+										<img src="/MaesEmAcao/assets/img/imgVagas/2.png"
+											class="card-img-top img-fluid" alt="" />
+										<p class="card-title text-center"></p>
+										<p class="card-text text-center"></p>
+										<section class="mt-2 text-center">
+											<button type="submit" class="botoes">Inscreva-se</button>
+										</section>
+									</section>
+								</section>
+							</section>
+							<section class="col-sm-4">
+								<section class="card border-primary mb-3">
+									<section class="card-body">
+										<img src="/MaesEmAcao/assets/img/imgVagas/3.png"
+											class="card-img-top img-fluid" alt="" />
+										<p class="card-title text-center"></p>
+										<p class="card-text text-center"></p>
+										<section class="mt-2 text-center">
+											<button type="submit" class="botoes">Inscreva-se</button>
+										</section>
+									</section>
+								</section>
+							</section>
+						</section>
+						<section class="row">
+							<section class="col-sm-4">
+								<section class="card border-primary mb-3">
+									<section class="card-body">
+										<img src="/MaesEmAcao/assets/img/imgVagas/4.png"
+											class="card-img-top img-fluid" alt="" />
+										<p class="card-title text-center"></p>
+										<p class="card-text text-center"></p>
+										<section class="mt-2 text-center">
+											<button type="submit" class="botoes">Inscreva-se</button>
+										</section>
+									</section>
+								</section>
+							</section>
+							<section class="col-sm-4">
+								<section class="card border-primary mb-3">
+									<section class="card-body">
+										<img src="/MaesEmAcao/assets/img/imgVagas/5.png"
+											class="card-img-top img-fluid" alt="" />
+										<p class="card-title text-center"></p>
+										<p class="card-text text-center"></p>
+										<section class="mt-2 text-center">
+											<button type="submit" class="botoes">Inscreva-se</button>
+										</section>
+									</section>
+								</section>
+							</section>
+							<section class="col-sm-4">
+								<section class="card border-primary mb-3">
+									<section class="card-body">
+										<img src="/MaesEmAcao/assets/img/imgVagas/6.png"
+											class="card-img-top img-fluid" alt="" />
+										<p class="card-title text-center"></p>
+										<p class="card-text text-center"></p>
+										<section class="mt-2 text-center">
+											<button type="submit" class="botoes">Inscreva-se</button>
+										</section>
+									</section>
+								</section>
+							</section>
+						</section>
+					</div>
+				</div>
+				<!--CARDS-->
+				<div class="container mt-5">
+					<section class="row">
+						<section class="col-sm-4 zoom-conteiner img-com-texto">
+							<img src="/MaesEmAcao/assets/img/ImgPaginas/construa.png" alt="Imagem para zoom"
+								class="img-fluid" />
+							<div class="texto-sobre-img">CONSTRUA</div>
+						</section>
+						<section class="col-sm-4 zoom-conteiner img-com-texto">
+							<img src="/MaesEmAcao/assets/img/ImgPaginas/novas.png" alt="Imagem para zoom"
+								class="img-fluid" />
+							<div class="texto-sobre-img">NOVAS</div>
+						</section>
+						<section class="col-sm-4 zoom-conteiner img-com-texto">
+							<img src="/MaesEmAcao/assets/img/ImgPaginas/oportunidades.png"
+								alt="Imagem para zoom" class="img-fluid" />
+							<div class="texto-sobre-img">OPORTUNIDADES</div>
+						</section>
+					</section>
+				</div>
+				<div class="mt-5">
+					<div class="container-fluid bg-white texto-centro-conteiner">
+						<p class="h2 text-danger text-center">VENHA FAZER PARTE!</p>
+						<p class="h2 textos text-center">
+							<button type="submit" class="botoes">CADASTRE-SE</button>
+						</p>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<!--FOOTER-->
+		<footer class="container-fluid rodape mt-4">
+			<div class="footer">
+				<section class="row">
+					<section class="col about-company text-center mt-3">
+						<p>
+							<span class="bi bi-facebook"><a
+								href="#" class="link-dark" style="text-decoration: none"></a></span>
+							<span class="bi bi-instagram"><a
+								href="#" class="link-dark" style="text-decoration: none"></a></span>
+							<span class="bi bi-linkedin"><a
+								href="#" class="link-dark" style="text-decoration: none"></a></span>
+							<span class="bi bi-twitter"><a
+								href="#" class="link-dark" style="text-decoration: none"></a></span>
+						</p>
+					</section>
+				</section>
+				<section class="row">
+					<section class="col copyright text-center">
+						<p class="">
+							<small class="text-dark-50">Mães em
+								Ação | © 2023. Todos os Direitos Reservados.</small>
+						</p>
+					</section>
+				</section>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
