@@ -7,8 +7,12 @@ CREATE TABLE IF NOT EXISTS Endereco (
     estado VARCHAR(50) NOT NULL,
     cidade VARCHAR(255) NOT NULL,
     fk_candidato INTEGER,
-    FOREIGN KEY (fk_candidato) REFERENCES Candidato (id_candidato) ON DELETE RESTRICT 
+    FOREIGN KEY (fk_candidato) REFERENCES Candidato (id_candidato) ON DELETE CASCADE
 );
+
+select * from endereco;
+select * from Candidato, Endereco where id_candidato = fk_candidato;
+SELECT c.*, e.* FROM endereco e JOIN candidato c on c.id_candidato = 3 and e.fk_candidato = c.id_candidato;
 
 CREATE TABLE IF NOT EXISTS Candidato (
     id_candidato INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -19,6 +23,8 @@ CREATE TABLE IF NOT EXISTS Candidato (
     idioma VARCHAR(50) NOT NULL,
     formacao VARCHAR(255) NOT NULL
 );
+
+select * from candidato;
 
 CREATE TABLE IF NOT EXISTS Empresa (
     id_empresa INTEGER AUTO_INCREMENT PRIMARY KEY,

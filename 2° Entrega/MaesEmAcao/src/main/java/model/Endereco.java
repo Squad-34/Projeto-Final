@@ -53,13 +53,17 @@ public class Endereco {
 	public String getCidade() {
 		return cidade;
 	}
-	
-	public void setCandidato(Candidato candidato) {
-		this.candidato = candidato;
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 
 	public Candidato getCandidato() {
 		return candidato;
+	}
+
+	public void setCandidato(Candidato candidato) {
+		this.candidato = candidato;
 	}
 
 	@Override
@@ -67,7 +71,5 @@ public class Endereco {
 		return "Endereco [idEndereco=" + idEndereco + ", cep=" + cep + ", estado=" + estado + ", cidade=" + cidade
 				+ ", candidato=" + candidato.getIdCandidato() + "]";
 	}
-
-	
 
 }

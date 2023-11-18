@@ -1,9 +1,11 @@
 /* INICIO INDEX INDEX / PERFIL / VAGAS / CONTATO */
+
 .conteiner-principal
 
 /*  DEFINIÇÕES DO CONTEINER PRINCIPAL */
     {
     position: relative;
+    min-height: 100%;
     padding-left: 0;
     padding-right: 0;
     background-color: #0b0c23;
@@ -14,13 +16,14 @@
 /* DISTANCIA DA BORDA INFERIOR DO PADDING */
     {
     padding-bottom: 2rem;
+
 }
 
 .navbar
 
 /* DEFINIÇÕES DA BARRA DE NAVEGAÇÃO */
     {
-    background-color: rgb(169, 91, 149, 0.6);
+	background-color: rgb(169, 91, 149, 0.6);
     transition: background-color 0.3s;
 }
 
@@ -59,6 +62,7 @@
 
 /* COR E DOS BOTÕES */
     {
+	border-radius: 23px 6px !important;
     background-color: #a95b95;
 }
 
@@ -168,7 +172,6 @@
 /* DEFINIÇÕES DA LARGURA DO INPUT TYPE TEXT */
     {
     width: 600px;
-    text-align: center;
 }
 
 /* FIM PERFIL / VAGAS / CONTATO */

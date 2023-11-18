@@ -19,7 +19,8 @@
 	integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
 	crossorigin="anonymous"></script>
 <!--ARQUIVO CSS-->
-<link rel="stylesheet" type="text/css" href="/MaesEmAcao/assets/css/stylecss.css" />
+<link rel="stylesheet" type="text/css"
+	href="/MaesEmAcao/assets/css/stylecss.css" />
 </head>
 
 <body>
@@ -32,8 +33,8 @@
 				<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
 					<div class="container-fluid">
 						<a class="navbar-brand" href="#"> <img
-							src="/MaesEmAcao/assets/img/logo/logo-sem-fundo.png" class="bordas-thumb-logo"
-							alt="" width="60" height="60" />
+							src="/MaesEmAcao/assets/img/logo/logo-sem-fundo.png"
+							class="bordas-thumb-logo" alt="" width="60" height="60" />
 						</a>
 						<button class="navbar-toggler" type="button"
 							data-bs-toggle="collapse" data-bs-target="#navVagas"
@@ -44,17 +45,19 @@
 						<div class="collapse navbar-collapse" id="navVagas">
 							<ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
 								<li class="nav-item"><a class="nav-link active"
-									href="index.html">Home</a></li>
+									href="/MaesEmAcao/index.jsp">Home</a></li>
 								<li class="nav-item"><a class="nav-link active"
 									href="perfil.html">Perfil</a></li>
 								<li class="nav-item"><a class="nav-link active"
 									href="vagas.html">Vagas</a></li>
 								<li class="nav-item"><a class="nav-link active"
 									href="contato.html">Contato</a></li>
+								<li class="nav-item"><a class="nav-link active"
+									href="/MaesEmAcao/candidato">Candidato</a></li>
 							</ul>
 							<div class="d-flex">
+								<a href="#" class="text-dark me-3"><i class="bi bi-facebook"></i></a>
 								<a href="#" class="text-dark me-3"><i
-									class="bi bi-facebook"></i></a> <a href="#" class="text-dark me-3"><i
 									class="bi bi-instagram"></i></a> <a href="#" class="text-dark me-3"><i
 									class="bi bi-linkedin"></i></a> <a href="#" class="text-dark"><i
 									class="bi bi-twitter"></i></a>
@@ -65,19 +68,20 @@
 			</header>
 			<main>
 				<div class="zoom-conteiner">
-					<img src="/MaesEmAcao/assets/img/ImgPaginas/topoHome.png" alt="Imagem para zoom"
-						class="img-fluid" style="width: 100%" />
+					<img src="/MaesEmAcao/assets/img/ImgPaginas/topoHome.png"
+						alt="Imagem para zoom" class="img-fluid" style="width: 100%" />
 				</div>
 
 				<!--CARDS-->
 				<div class="container mt-5">
 					<div class="row">
 						<div class="col-lg-6 col-md-12 img-com-texto mb-4 mb-lg-0">
-							<img src="/MaesEmAcao/assets/img/imgCards/1.png" class="img-fluid" />
+							<img src="/MaesEmAcao/assets/img/imgCards/1.png"
+								class="img-fluid" />
 						</div>
 						<div class="col-lg-6 col-md-12 img-com-texto">
-							<img src="/MaesEmAcao/assets/img/imgCards/background.png" alt="Imagem"
-								class="img-fluid imagem-texto" />
+							<img src="/MaesEmAcao/assets/img/imgCards/background.png"
+								alt="Imagem" class="img-fluid imagem-texto" />
 							<div class="texto-sobre-img">"Ultrices commodo luctus morbi
 								habitasse venenatis turpis lobortis blandit, curabitur etiam
 								taciti felis viverra pretium nibh orci lobortis"</div>
@@ -85,14 +89,15 @@
 					</div>
 					<div class="row mt-4">
 						<div class="col-lg-6 col-md-12 img-com-texto mb-4 mb-lg-0">
-							<img src="/MaesEmAcao/assets/img/imgCards/background.png" alt="Imagem"
-								class="img-fluid imagem-texto" />
+							<img src="/MaesEmAcao/assets/img/imgCards/background.png"
+								alt="Imagem" class="img-fluid imagem-texto" />
 							<div class="texto-sobre-img">"Ultrices commodo luctus morbi
 								habitasse venenatis turpis lobortis blandit, curabitur etiam
 								taciti felis viverra pretium nibh orci lobortis"</div>
 						</div>
 						<div class="col-lg-6 col-md-12 img-com-texto">
-							<img src="/MaesEmAcao/assets/img/imgCards/2.png" class="img-fluid" />
+							<img src="/MaesEmAcao/assets/img/imgCards/2.png"
+								class="img-fluid" />
 						</div>
 					</div>
 				</div>
@@ -190,13 +195,13 @@
 				<div class="container mt-5">
 					<section class="row">
 						<section class="col-sm-4 zoom-conteiner img-com-texto">
-							<img src="/MaesEmAcao/assets/img/ImgPaginas/construa.png" alt="Imagem para zoom"
-								class="img-fluid" />
+							<img src="/MaesEmAcao/assets/img/ImgPaginas/construa.png"
+								alt="Imagem para zoom" class="img-fluid" />
 							<div class="texto-sobre-img">CONSTRUA</div>
 						</section>
 						<section class="col-sm-4 zoom-conteiner img-com-texto">
-							<img src="/MaesEmAcao/assets/img/ImgPaginas/novas.png" alt="Imagem para zoom"
-								class="img-fluid" />
+							<img src="/MaesEmAcao/assets/img/ImgPaginas/novas.png"
+								alt="Imagem para zoom" class="img-fluid" />
 							<div class="texto-sobre-img">NOVAS</div>
 						</section>
 						<section class="col-sm-4 zoom-conteiner img-com-texto">
@@ -223,13 +228,11 @@
 				<section class="row">
 					<section class="col about-company text-center mt-3">
 						<p>
-							<span class="bi bi-facebook"><a
-								href="#" class="link-dark" style="text-decoration: none"></a></span>
-							<span class="bi bi-instagram"><a
-								href="#" class="link-dark" style="text-decoration: none"></a></span>
-							<span class="bi bi-linkedin"><a
-								href="#" class="link-dark" style="text-decoration: none"></a></span>
-							<span class="bi bi-twitter"><a
+							<span class="bi bi-facebook"><a href="#" class="link-dark"
+								style="text-decoration: none"></a></span> <span class="bi bi-instagram"><a
+								href="#" class="link-dark" style="text-decoration: none"></a></span> <span
+								class="bi bi-linkedin"><a href="#" class="link-dark"
+								style="text-decoration: none"></a></span> <span class="bi bi-twitter"><a
 								href="#" class="link-dark" style="text-decoration: none"></a></span>
 						</p>
 					</section>
@@ -237,8 +240,8 @@
 				<section class="row">
 					<section class="col copyright text-center">
 						<p class="">
-							<small class="text-dark-50">Mães em
-								Ação | © 2023. Todos os Direitos Reservados.</small>
+							<small class="text-dark-50">Mães em Ação | © 2023. Todos
+								os Direitos Reservados.</small>
 						</p>
 					</section>
 				</section>
