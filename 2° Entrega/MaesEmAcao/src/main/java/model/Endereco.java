@@ -7,6 +7,7 @@ public class Endereco {
 	private String estado;
 	private String cidade;
 	private Candidato candidato;
+	private Empresa empresa;
 
 	public Endereco() {
 	}
@@ -18,12 +19,13 @@ public class Endereco {
 		this.candidato = candidato;
 	}
 
-	public Endereco(int idEndereco, int cep, String estado, String cidade, Candidato candidato) {
+	public Endereco(int idEndereco, int cep, String estado, String cidade, Candidato candidato, Empresa empresa) {
 		this.idEndereco = idEndereco;
 		this.cep = cep;
 		this.estado = estado;
 		this.cidade = cidade;
 		this.candidato = candidato;
+		this.empresa = empresa;
 	}
 
 	public int getIdEndereco() {
@@ -65,11 +67,19 @@ public class Endereco {
 	public void setCandidato(Candidato candidato) {
 		this.candidato = candidato;
 	}
+	
+	public Candidato getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
 
 	@Override
 	public String toString() {
 		return "Endereco [idEndereco=" + idEndereco + ", cep=" + cep + ", estado=" + estado + ", cidade=" + cidade
-				+ ", candidato=" + candidato.getIdCandidato() + "]";
+				+ ", candidato=" + candidato.getIdCandidato() + ", empresa=" + empresa.getIdEmpresa() + "]";
 	}
 
 }
