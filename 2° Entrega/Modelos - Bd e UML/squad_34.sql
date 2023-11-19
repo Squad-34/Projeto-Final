@@ -10,6 +10,10 @@ CREATE TABLE IF NOT EXISTS Endereco (
     FOREIGN KEY (fk_candidato) REFERENCES Candidato (id_candidato) ON DELETE CASCADE
 );
 
+alter table endereco add column fk_empresa INTEGER;
+alter table endereco add constraint fk_empresa 
+FOREIGN KEY (fk_empresa) REFERENCES Empresa (id_empresa) ON DELETE CASCADE;
+    
 select * from endereco;
 select * from Candidato, Endereco where id_candidato = fk_candidato;
 SELECT c.*, e.* FROM endereco e JOIN candidato c on c.id_candidato = 3 and e.fk_candidato = c.id_candidato;
@@ -31,9 +35,7 @@ CREATE TABLE IF NOT EXISTS Empresa (
     nome VARCHAR(255),
     cnpj VARCHAR(18) UNIQUE,
     email VARCHAR(255),
-    telefone VARCHAR(20),
-    fk_endereco INTEGER,
-    FOREIGN KEY (fk_endereco) REFERENCES Endereco (id_endereco) ON DELETE RESTRICT
+    telefone VARCHAR(20)
 );
 
 CREATE TABLE IF NOT EXISTS Vaga (
@@ -53,8 +55,10 @@ CREATE TABLE IF NOT EXISTS Experiencia (
     data_inicio DATE NOT NULL,
     data_fim DATE,
     fk_candidato INTEGER,
-    FOREIGN KEY (fk_candidato) REFERENCES Candidato (id_candidato) ON DELETE CASCADE
+    FOREIGN KEY (fk_candidato) REFERENCES Candidato (id_candidato) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+select * from experiencia;
 
 CREATE TABLE IF NOT EXISTS Aplicacao (
     id_aplicacao INTEGER AUTO_INCREMENT PRIMARY KEY,

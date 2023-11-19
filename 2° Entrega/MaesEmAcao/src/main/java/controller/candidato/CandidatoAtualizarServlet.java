@@ -14,7 +14,7 @@ import model.Candidato;
 import model.CandidatoEndereco;
 import model.Endereco;
 
-@WebServlet(urlPatterns = { "/candidato-editar", "/candidato-atualizar" })
+@WebServlet(urlPatterns = { "/candidato-editar", "/candidato-atualizar", "/candidato/experiencia-editar"})
 public class CandidatoAtualizarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	CandidatoDAO candidatoDao = new CandidatoDAO();
@@ -38,6 +38,9 @@ public class CandidatoAtualizarServlet extends HttpServlet {
 			break;
 		case "/candidato-atualizar":
 			atualizar(request, response);
+			break;
+		case "/candidato/experiencia-editar":
+			editarExperiencia(request, response);
 			break;
 		default:
 			response.sendRedirect("index.jsp");
@@ -75,6 +78,16 @@ public class CandidatoAtualizarServlet extends HttpServlet {
 		
 		candidatoDao.atualizar(candidato, endereco);
 		response.sendRedirect("candidato");
+	}
+	
+	protected void editarExperiencia(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		int id = Integer.parseInt(request.getParameter("id"));
+		candidatoEndereco = candidatoDao.consultarById(id);
+
+		request.setAttribute("candidatoEndereco", candidatoEndereco);
+		RequestDispatcher rd = request.getRequestDispatcher("../views/experiencia/cadastrar.jsp");
+		rd.forward(request, response);
 	}
 
 }

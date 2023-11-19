@@ -66,76 +66,36 @@
 			<main>
 				<section class="container titulos">
 					<div class="p-4">
-						<a href="./views/candidato/cadastrar.jsp"
-							class="btn btn-dark mb-2 botoes">Novo</a> <a
-							href="/MaesEmAcao/index.jsp" class="btn btn-dark mb-2 botoes">Voltar</a>
+						<a href="/MaesEmAcao/candidato" class="btn btn-dark mb-2 botoes">Voltar</a>
 						<table class="table table-responsive table-hover">
 							<thead class="table-dark">
 								<tr>
 									<th scope="col">Id</th>
-									<th scope="col">Nome</th>
-									<th scope="col">Email</th>
-									<th scope="col">CPF</th>
-									<th scope="col">Telefone</th>
-									<th scope="col">Idioma</th>
-									<th scope="col">Formação</th>
-									<th scope="col">Id</th>
-									<th scope="col">Cep</th>
-									<th scope="col">Estado</th>
-									<th scope="col">Cidade</th>
-									<th scope="col">Atualizar / Deletar</th>
-									<th scope="col">Cadastrar Experiência</th>
-									<th scope="col">Consultar Experiência</th>
+									<th scope="col">Nome Empresa</th>
+									<th scope="col">Cargo</th>
+									<th scope="col">Data Início</th>
+									<th scope="col">Data Final</th>
+									<th scope="col">Id Candidato</th>
+									<th scope="col">Atualizar</th>
 								</tr>
 							</thead>
 							<tbody>
-
-								<jstl:forEach items="${listaCandidatos}" var="c">
-									<tr>
-										<td>${c.candidato.idCandidato}</td>
-										<td>${c.candidato.nome}</td>
-										<td>${c.candidato.email}</td>
-										<td>${c.candidato.cpf}</td>
-										<td>${c.candidato.telefone}</td>
-										<td>${c.candidato.idioma}</td>
-										<td>${c.candidato.formacao}</td>
-										<td>${c.endereco.idEndereco}</td>
-										<td>${c.endereco.cep}</td>
-										<td>${c.endereco.estado}</td>
-										<td>${c.endereco.cidade}</td>
-										<td>
-											<div class="d-flex">
-												<a href="candidato-editar?id=${c.candidato.idCandidato}"
-													class="mx-1" title="Editar"> <i
-													class="bi bi-pencil-square"></i>
-												</a> <a href="candidato-deletar?id=${c.candidato.idCandidato}"
-													class="mx-1" title="Cancelar"
-													onclick="return confirm('Deseja excluir o candidato ${c.candidato.nome}')">
-													<i class="bi bi-trash"></i>
-												</a>
-											</div>
-										</td>
-										<td>
-											<div class="d-flex">
-												<a
-													href="candidato/experiencia-editar?id=${c.candidato.idCandidato}"
-													class="icons-cards" title="Cadastrar Experiência"
-													onclick="return confirm('Deseja cadastrar a experiência para o candidato ${c.candidato.nome}?')">
-													<i class="bi bi-check-square"></i>
-												</a>
-											</div>
-										</td>
-										<td>
-											<div class="d-flex">
-												<a href="experiencia?id=${c.candidato.idCandidato}"
-													class="icons-cards" title="Consultar Experiência"
-													onclick="return confirm('Deseja consultar a experiência para o candidato ${c.candidato.nome}?')">
-													<i class="bi bi-search"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
-								</jstl:forEach>
+								<tr>
+									<td>${experiencia.idExperiencia}</td>
+									<td>${experiencia.nomeEmpresa}</td>
+									<td>${experiencia.cargo}</td>
+									<td>${experiencia.dataInicio}</td>
+									<td>${experiencia.dataFinal}</td>
+									<td>${experiencia.candidato.idCandidato}</td>
+									<td>
+										<div class="d-flex">
+											<a href="experiencia-editar?id=${experiencia.candidato.idCandidato}"
+												class="mx-1" title="Editar"> <i
+												class="bi bi-pencil-square"></i>
+											</a>
+										</div>
+									</td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
