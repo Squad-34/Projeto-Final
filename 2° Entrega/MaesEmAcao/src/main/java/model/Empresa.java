@@ -9,8 +9,11 @@ public class Empresa {
 	private String telefone;
 	private Endereco endereco;
 
-	public Empresa() {
+	public Empresa(int idEmpresa) {
+		this.idEmpresa = idEmpresa;
 	}
+	
+	public Empresa()
 
 	public Empresa(String nome, String cnpj, String email, String telefone, Endereco endereco) {
 		this.nome = nome;
