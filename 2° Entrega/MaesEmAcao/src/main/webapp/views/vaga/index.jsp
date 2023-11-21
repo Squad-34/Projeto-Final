@@ -43,9 +43,9 @@
 						<li class="nav-item"><a class="nav-link active"
 							href="/MaesEmAcao/index.jsp">Home</a></li>
 						<li class="nav-item"><a class="nav-link active"
-							href="perfil.html">Perfil</a></li>
+							href="/MaesEmAcao/views/candidato/cadastrar.jsp">Perfil</a></li>
 						<li class="nav-item"><a class="nav-link active"
-							href="vagas.html">Vagas</a></li>
+							href="/MaesEmAcao/vaga">Vagas</a></li>
 						<li class="nav-item"><a class="nav-link active"
 							href="contato.html">Contato</a></li>
 						<li class="nav-item"><a class="nav-link active"
@@ -66,6 +66,7 @@
 			<main>
 				<section class="container titulos">
 					<div class="p-4">
+						<a href="./views/vaga/cadastroVaga.jsp" class="btn btn-dark mb-2 botoes">Novo</a>
 						<a href="/MaesEmAcao/empresa" class="btn btn-dark mb-2 botoes">Voltar</a>
 						<table class="table table-responsive table-hover">
 							<thead class="table-dark">
@@ -76,35 +77,32 @@
 									<th scope="col">Requisitos</th>
 									<th scope="col">Salário</th>
 									<th scope="col">Empresa</th>
-									<th scope="col">Atualizar</th>
-									<th scope="col">Deletar</th>
+									<th scope="col">Atualizar / Deletar</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>${vaga.idVaga}</td>
-									<td>${vaga.titulo}</td>
-									<td>${vaga.descricao}</td>
-									<td>${vaga.requisito}</td>
-									<td>${vaga.salario}</td>
-									<td>${vaga.empresa.nome}</td>
-									<td>
-										<div class="d-flex">
-											<a href="vaga-editar?id=${vaga.empresa.idEmpresa}"
-												class="mx-1" title="Editar"> <i
-												class="bi bi-pencil-square"></i>
-											</a>
-										</div>
-									</td>
-									<td>
-										<div class="d-flex">
-											<a href="vaga-deletar?id=${vaga.empresa.idEmpresa}"
-												class="mx-1" title="Deletar"> <i
-												class="bi bi-pencil-square"></i>
-											</a>
-										</div>
-									</td>
-								</tr>
+								<jstl:forEach items="${listaVagas}" var="v">
+									<tr>
+										<td>${v.idVaga}</td>
+										<td>${v.titulo}</td>
+										<td>${v.descricao}</td>
+										<td>${v.requisito}</td>
+										<td>${v.salario}</td>
+										<td>${v.empresa.idEmpresa}</td>
+										<td>
+											<div class="d-flex">
+												<a href="vaga-editar?id=${v.idVaga}"
+													class="mx-1" title="Editar"> <i
+													class="bi bi-pencil-square"></i>
+												</a> <a href="vaga-deletar?id=${v.idVaga}"
+													class="mx-1" title="Cancelar"
+													onclick="return confirm('Deseja excluir a vaga ${v.titulo}')">
+													<i class="bi bi-trash"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
+								</jstl:forEach>
 							</tbody>
 						</table>
 					</div>

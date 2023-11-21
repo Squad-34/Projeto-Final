@@ -49,7 +49,8 @@ public class VagaDAO {
 			}
 		}
 	}
-	//listar
+
+	// listar
 	public List<Vaga> listar() {
 		String sql = "SELECT * FROM vaga";
 		Connection conn = null;
@@ -93,6 +94,7 @@ public class VagaDAO {
 
 		return vagas;
 	}
+
 //listar pelo Id
 	public Vaga consultarById(int idVaga) {
 		String sql = "SELECT * FROM vaga WHERE id_vaga = ?";
@@ -136,6 +138,7 @@ public class VagaDAO {
 
 		return vaga;
 	}
+
 //deletar
 	public void removerByid(int id) {
 		String sql = "DELETE FROM vaga WHERE id_vaga = ?";
@@ -161,9 +164,10 @@ public class VagaDAO {
 			}
 		}
 	}
+
 //atualizar
 	public void atualizar(Vaga vaga) {
-		String sql = "UPDATE vaga SET titulo = ?, descricao = ?, requisito = ?, salario = ?, fk_empresa = ? WHERE id_vaga = ?";
+		String sql = "UPDATE vaga SET titulo = ?, descricao = ?, requisito = ?, salario = ?, WHERE id_vaga = ?";
 		Connection conn = null;
 		PreparedStatement pstm = null;
 
@@ -174,8 +178,7 @@ public class VagaDAO {
 			pstm.setString(2, vaga.getDescricao());
 			pstm.setString(3, vaga.getRequisito());
 			pstm.setDouble(4, vaga.getSalario());
-			pstm.setInt(5, vaga.getEmpresa().getIdEmpresa());
-			pstm.setInt(6, vaga.getIdVaga());
+			pstm.setInt(5, vaga.getIdVaga());
 			pstm.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

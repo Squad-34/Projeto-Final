@@ -62,13 +62,13 @@
 		<section class="conteiner-segundario">
 			<main>
 				<section class="section container titulos">
-					<form action="./experiencia-atualizar" class="form-control">
+					<form action="./vaga-atualizar" class="form-control">
 						<fieldset>
 							<legend class="text-center h3">Atualizar Vaga</legend>
 							<div>
 								<label for="idVaga">Id</label> <input type="text"
 									class="form-control" id="idVaga" name="idVaga"
-									value="${vaga.idVaga}">
+									value="${vaga.idVaga}" readonly>
 							</div>
 							<div>
 								<label for="titulo">Titulo</label> <input type="text"
@@ -89,6 +89,11 @@
 								<label for="salario">Salário</label> <input type="number"
 									class="form-control" id="salario" name="salario"
 									value="${vaga.salario}">
+							</div>
+							<div>
+								<label for="idEmpresa">id</label> <input type="number"
+									class="form-control" id="idEmpresa" name=""idEmpresa""
+									value="${vaga.empresa.idEmpresa}">
 							</div>
 							<div>
 								<button type="submit" class="btn btn-dark mt-2 botoes">Atualizar</button>

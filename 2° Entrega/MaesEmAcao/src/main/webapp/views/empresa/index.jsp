@@ -66,7 +66,7 @@
 			<main>
 				<section class="container titulos">
 					<div class="p-4">
-						<a href="./views/empresa/cadastrar.jsp"
+						<a href="./views/empresa/cadastroEmpresa.jsp"
 							class="btn btn-dark mb-2 botoes">Novo</a> <a
 							href="/MaesEmAcao/index.jsp" class="btn btn-dark mb-2 botoes">Voltar</a>
 						<table class="table table-responsive table-hover">
@@ -113,7 +113,7 @@
 										</td>
 										<td>
 											<div class="d-flex">
-												<a href="vaga/vaga-editar?id=${e.empresa.idEmpresa}"
+												<a href="vaga-editar?id=${e.empresa.idEmpresa}"
 													class="icons-cards" title="Cadastrar Vagas"
 													onclick="return confirm('Deseja cadastrar nova vaga ${e.empresa.nome}?')">
 													<i class="bi bi-check-square"></i>

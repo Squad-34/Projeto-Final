@@ -1,6 +1,7 @@
 package controller.vaga;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,11 +39,8 @@ public class ListaVagaServlet extends HttpServlet {
 	}
 
 	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
-		vaga = vagaDao.consultarById(id);
-
-		request.setAttribute("vaga", vaga);
-
+		List<Vaga> lista = vagaDao.listar();
+		request.setAttribute("listaVagas", lista);
 		RequestDispatcher rd = request.getRequestDispatcher("./views/vaga/index.jsp");
 		rd.forward(request, response);
 	}

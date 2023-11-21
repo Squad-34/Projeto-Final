@@ -16,7 +16,7 @@ import model.EmpresaEndereco;
 import model.Endereco;
 
 
-@WebServlet("/empresa")
+@WebServlet(urlPatterns = {"/empresa"})
 public class ListaEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Empresa empresa = new Empresa();

@@ -13,22 +13,20 @@ import dao.VagaDAO;
 import model.Empresa;
 import model.Vaga;
 
-
-@WebServlet(urlPatterns = { "/vaga-editar", "/vaga-atualizar"})
+@WebServlet(urlPatterns = { "/vaga-editar", "/vaga-atualizar" })
 public class AtualizaVagaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	VagaDAO vagaDao = new VagaDAO();
 	Vaga vaga = new Vaga();
 	Empresa empresa = new Empresa();
-       
 
-    public AtualizaVagaServlet() {
-        super();
+	public AtualizaVagaServlet() {
+		super();
 
-    }
+	}
 
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String action = request.getServletPath();
 
 		switch (action) {
@@ -44,30 +42,41 @@ public class AtualizaVagaServlet extends HttpServlet {
 		}
 	}
 
-
 	private void editar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		vaga = vagaDao.consultarById(id);
 
 		request.setAttribute("vaga", vaga);
-		RequestDispatcher rd = request.getRequestDispatcher("./views/vaga/atualizar.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("./views/vaga/atualizacaoVaga.jsp");
 		rd.forward(request, response);
-		
-	}
 
+	}
 
 	private void atualizar(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int id = Integer.parseInt(request.getParameter("idEmpresa"));
-		empresa.setIdEmpresa(id);		
-		
+		empresa.setIdEmpresa(id);
 		vaga.setTitulo(request.getParameter("titulo"));
 		vaga.setDescricao(request.getParameter("descricao"));
 		vaga.setRequisito(request.getParameter("requisito"));
-		vaga.setSalario(Double.parseDouble(request.getParameter("salario")));
-		vaga.setIdVaga(Integer.parseInt(request.getParameter("idVaga")));
+		String salarioParam = request.getParameter("salario");
+		System.out.println("Valor do salário recebido: " + salarioParam);
+
+		String str = salarioParam.replace(",", ".");
+		System.out.println("Valor após substituir vírgulas por pontos: " + str);
+
+		try {
+			Double sal = Double.parseDouble(str);
+			vaga.setSalario(sal);
+		} catch (NumberFormatException e) {
+			System.out.println("Erro ao converter para Double: " + e.getMessage());
+			// Trate o erro conforme necessário
+		}
+		int idVaga = Integer.parseInt(request.getParameter("idVaga"));
+		vaga.setIdVaga(idVaga);
 		vagaDao.atualizar(vaga);
+
 		response.sendRedirect("vaga?id=" + id);
-		
+
 	}
 
 }

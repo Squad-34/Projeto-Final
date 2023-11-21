@@ -13,7 +13,9 @@ public class Empresa {
 		this.idEmpresa = idEmpresa;
 	}
 	
-	public Empresa()
+	public Empresa() {
+		
+	}
 
 	public Empresa(String nome, String cnpj, String email, String telefone, Endereco endereco) {
 		this.nome = nome;

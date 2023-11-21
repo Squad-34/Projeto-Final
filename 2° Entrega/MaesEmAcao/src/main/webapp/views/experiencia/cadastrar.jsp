@@ -89,7 +89,7 @@
 							<div>
 								<button type="submit" class="btn btn-dark mt-2 botoes">Cadastrar</button>
 
-								<a href="../experiencia" class="btn btn-dark mt-2 botoes">Cancelar</a>
+								<a href="../experiencia?id=${candidatoEndereco.candidato.idCandidato}" class="btn btn-dark mt-2 botoes">Cancelar</a>
 							</div>
 						</fieldset>
 					</form>

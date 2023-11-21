@@ -47,9 +47,9 @@
 								<li class="nav-item"><a class="nav-link active"
 									href="/MaesEmAcao/index.jsp">Home</a></li>
 								<li class="nav-item"><a class="nav-link active"
-									href="perfil.html">Perfil</a></li>
+									href="/MaesEmAcao/views/candidato/cadastrar.jsp">Perfil</a></li>
 								<li class="nav-item"><a class="nav-link active"
-									href="vagas.html">Vagas</a></li>
+									href="/MaesEmAcao/vaga">Vagas</a></li>
 								<li class="nav-item"><a class="nav-link active"
 									href="contato.html">Contato</a></li>
 								<li class="nav-item"><a class="nav-link active"

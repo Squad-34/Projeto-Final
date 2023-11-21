@@ -8,8 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Candidato;
-import model.CandidatoEndereco;
 import model.Empresa;
 import model.EmpresaEndereco;
 import model.Endereco;

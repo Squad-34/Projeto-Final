@@ -68,9 +68,9 @@ public class AtualizaEmpresaServlet extends HttpServlet {
 		empresaEndereco = empresaDao.consultarById(id);
 
 		request.setAttribute("empresaEndereco", empresaEndereco);
-		RequestDispatcher rd = request.getRequestDispatcher("./views/empresa/atualizar.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("./views/empresa/atualizacaoEmpresa.jsp");
 		rd.forward(request, response);
 
 	}
-
+	
 }

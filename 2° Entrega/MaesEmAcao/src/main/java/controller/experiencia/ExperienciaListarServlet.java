@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.ExperienciaDAO;
 import model.Experiencia;
 
-@WebServlet("/experiencia")
+@WebServlet(urlPatterns = { "/experiencia"})
 public class ExperienciaListarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	ExperienciaDAO experienciaDao = new ExperienciaDAO();
@@ -31,7 +31,7 @@ public class ExperienciaListarServlet extends HttpServlet {
 
 		switch (action) {
 		case "/experiencia":
-			listar(request, response);
+			listarExperienciaIndex(request, response);
 			break;
 		default:
 			response.sendRedirect("index.jsp");
@@ -40,7 +40,7 @@ public class ExperienciaListarServlet extends HttpServlet {
 
 	}
 
-	protected void listar(HttpServletRequest request, HttpServletResponse response)
+	protected void listarExperienciaIndex(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		experiencia = experienciaDao.consultarById(id);
@@ -50,5 +50,5 @@ public class ExperienciaListarServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("./views/experiencia/index.jsp");
 		rd.forward(request, response);
 	}
-
+	
 }
