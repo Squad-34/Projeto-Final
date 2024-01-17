@@ -7,6 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,17 +27,21 @@ public class Experiencia extends Entidade {
 	@Column(name = "data_fim")
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate dataFim;
+	
+	@ManyToOne
+	private Candidato candidato;
 
 	public Experiencia() {
 		super();
 	}
 
-	public Experiencia(String nomeEmpresa, String cargo, LocalDate dataInicio, LocalDate dataFim) {
+	public Experiencia(String nomeEmpresa, String cargo, LocalDate dataInicio, LocalDate dataFim, Candidato candidato) {
 		super();
 		this.nomeEmpresa = nomeEmpresa;
 		this.cargo = cargo;
 		this.dataInicio = dataInicio;
 		this.dataFim = dataFim;
+		this.candidato = candidato;
 	}
 
 	public String getNomeEmpresa() {
@@ -70,5 +75,14 @@ public class Experiencia extends Entidade {
 	public void setDataFim(LocalDate dataFim) {
 		this.dataFim = dataFim;
 	}
+
+	public Candidato getCandidato() {
+		return candidato;
+	}
+
+	public void setCandidato(Candidato candidato) {
+		this.candidato = candidato;
+	}
+
 
 }

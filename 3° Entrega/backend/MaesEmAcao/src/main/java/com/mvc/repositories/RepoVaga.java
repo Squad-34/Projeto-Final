@@ -11,4 +11,6 @@ public interface RepoVaga extends JpaRepository<Vaga, Long>{
 
     @EntityGraph(attributePaths = {"empresa"})
     List<Vaga> findAll();
+    
+    List<Vaga> findByTitulo(String titulo);
 }

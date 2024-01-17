@@ -39,7 +39,6 @@ public class EmpresaController {
 		ModelAndView modelAndView = new ModelAndView("views/empresas/create");
 		modelAndView.addObject("empresas", new Empresa());
 		modelAndView.addObject("ufs", UF.values());
-		// modelAndView.addObject("vagas", new Vaga());
 
 		return modelAndView;
 	}
@@ -49,7 +48,6 @@ public class EmpresaController {
 		ModelAndView modelAndView = new ModelAndView("views/empresas/edit");
 		modelAndView.addObject("empresa", repoEmpresa.getReferenceById(id));
 		modelAndView.addObject("ufs", UF.values());
-		// modelAndView.addObject("vagas", new Vaga());
 
 		return modelAndView;
 	}
@@ -69,4 +67,6 @@ public class EmpresaController {
 
 		return modelAndView;
 	}
+	
+	
 }

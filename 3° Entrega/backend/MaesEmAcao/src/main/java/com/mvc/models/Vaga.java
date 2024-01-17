@@ -1,12 +1,16 @@
 package com.mvc.models;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -14,7 +18,7 @@ import jakarta.persistence.Table;
 public class Vaga extends Entidade {
 
 	@Column(nullable = false, length = 80, unique = true)
-	private String título;
+	private String titulo;
 
 	@Column(nullable = false, length = 80, unique = true)
 	private String descrição;
@@ -25,25 +29,34 @@ public class Vaga extends Entidade {
 	@Column(nullable = false)
 	@NumberFormat(style = Style.CURRENCY, pattern = "#,##0.00")
 	private BigDecimal salario;
+	
+	@OneToMany(mappedBy = "vaga", cascade = CascadeType.REMOVE)
+	private List<Candidato> candidatos;
+	
+	@OneToMany(mappedBy = "vaga", cascade = CascadeType.REMOVE)
+	private List<Empresa> empresas;
 
 	public Vaga() {
 		super();
 	}
 
-	public Vaga(String título, String descrição, String requisitos, BigDecimal salario) {
+	public Vaga(String titulo, String descrição, String requisitos, BigDecimal salario, List<Candidato> candidatos,
+			List<Empresa> empresas) {
 		super();
-		this.título = título;
+		this.titulo = titulo;
 		this.descrição = descrição;
 		this.requisitos = requisitos;
 		this.salario = salario;
+		this.candidatos = candidatos;
+		this.empresas = empresas;
 	}
 
-	public String getTítulo() {
-		return título;
+	public String getTitulo() {
+		return titulo;
 	}
 
-	public void setTítulo(String título) {
-		this.título = título;
+	public void setTitulo(String título) {
+		this.titulo = título;
 	}
 
 	public String getDescrição() {
@@ -68,6 +81,22 @@ public class Vaga extends Entidade {
 
 	public void setSalario(BigDecimal salario) {
 		this.salario = salario;
+	}
+
+	public List<Candidato> getCandidatos() {
+		return candidatos;
+	}
+
+	public void setCandidatos(List<Candidato> candidatos) {
+		this.candidatos = candidatos;
+	}
+
+	public List<Empresa> getEmpresas() {
+		return empresas;
+	}
+
+	public void setEmpresas(List<Empresa> empresas) {
+		this.empresas = empresas;
 	}
 
 }

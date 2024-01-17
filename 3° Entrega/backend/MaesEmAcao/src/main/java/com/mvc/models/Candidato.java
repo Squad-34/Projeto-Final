@@ -1,6 +1,7 @@
 package com.mvc.models;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -11,6 +12,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -47,17 +49,19 @@ public class Candidato extends Entidade {
 	@JoinColumn(name = "endereco_fk", nullable = false)
 	private Endereco endereco;
 	
-	@ManyToOne
+	@OneToMany(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "experiencia_fk", nullable = false)
-	private Experiencia experiencia;
+	private List <Experiencia> experiencias;
+	
+	@ManyToOne
+	private Vaga vaga;
 
 	public Candidato() {
 		super();
 	}
 
-
 	public Candidato(String nome, String cpf, String telefone, int qtdFilhos, String email, String idioma,
-			String formação, LocalDate dataNascimento, Endereco endereco, Experiencia experiencia) {
+			String formação, LocalDate dataNascimento, Endereco endereco, List<Experiencia> experiencias, Vaga vaga) {
 		super();
 		this.nome = nome;
 		this.cpf = cpf;
@@ -68,9 +72,9 @@ public class Candidato extends Entidade {
 		this.formação = formação;
 		this.dataNascimento = dataNascimento;
 		this.endereco = endereco;
-		this.experiencia = experiencia;
+		this.experiencias = experiencias;
+		this.vaga = vaga;
 	}
-
 
 	public String getNome() {
 		return nome;
@@ -95,7 +99,7 @@ public class Candidato extends Entidade {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	
+
 	public int getQtdFilhos() {
 		return qtdFilhos;
 	}
@@ -144,12 +148,21 @@ public class Candidato extends Entidade {
 		this.endereco = endereco;
 	}
 
-	public Experiencia getExperiencia() {
-		return experiencia;
+	public List<Experiencia> getExperiencias() {
+		return experiencias;
 	}
 
-	public void setExperiencia(Experiencia experiencia) {
-		this.experiencia = experiencia;
+	public void setExperiencias(List<Experiencia> experiencias) {
+		this.experiencias = experiencias;
 	}
+
+	public Vaga getVaga() {
+		return vaga;
+	}
+
+	public void setVaga(Vaga vaga) {
+		this.vaga = vaga;
+	}
+
 	
 }
