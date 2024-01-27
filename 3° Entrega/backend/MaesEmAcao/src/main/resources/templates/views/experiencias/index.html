@@ -36,19 +36,17 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navVagas">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-								<li class="nav-item"><a class="nav-link active"
-									href="/">Home</a></li>
-								<li class="nav-item"><a class="nav-link active"
-									href="/MaesEmAcao/views/candidato/cadastrar.jsp">Perfil</a></li>
-								<li class="nav-item"><a class="nav-link active"
-									href="/vagas">Vagas</a></li>
-								<li class="nav-item"><a class="nav-link active"
-									href="/contatos">Contato</a></li>
-								<li class="nav-item"><a class="nav-link active"
-									href="/candidatos">Candidato</a></li>
-								<li class="nav-item"><a class="nav-link active" 
-									href="/empresas">Empresas</a></li>
-							</ul>
+						<li class="nav-item"><a class="nav-link active"
+							href="/MaesEmAcao/index.jsp">Home</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							href="perfil.html">Perfil</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							href="vagas.html">Vagas</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							href="contato.html">Contato</a></li>
+						<li class="nav-item"><a class="nav-link active"
+							href="/MaesEmAcao/candidato">Candidato</a></li>
+					</ul>
 					<div class="d-flex">
 						<a href="#" class="text-dark me-3"><i class="bi bi-facebook"></i></a>
 						<a href="#" class="text-dark me-3"><i class="bi bi-instagram"></i></a>
@@ -64,36 +62,29 @@
 			<main>
 				<section class="container titulos">
 					<div class="p-4">
-						<a th:href="@{/empresas}" class="btn btn-dark mb-2 botoes">Voltar</a>
+						<a th:href="@{/candidatos}" class="btn btn-dark mb-2 botoes">Voltar</a>
 						<table class="table table-responsive table-hover">
 							<thead class="table-dark">
 								<tr>
-									<th scope="col">Titulo</th>
-									<th scope="col">Descrição</th>
-									<th scope="col">Requisitos</th>
-									<th scope="col">Salário</th>
-									<th scope="col">Atualizar / Deletar</th>
+									<th scope="col">Id</th>
+									<th scope="col">Nome Empresa</th>
+									<th scope="col">Cargo</th>
+									<th scope="col">Data Início</th>
+									<th scope="col">Data Final</th>
+									<th scope="col">Id Candidato</th>
+									<th scope="col">Atualizar</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr th:each="v : ${vagas}">
-										<td th:text="${v.titulo}"></td>
-										<td th:text="${v.descricao}"></td>
-										<td th:text="${v.requisitos}"></td>
-										<td th:text="${v.salario}"></td>
-										<td>
-											<div class="d-flex">
-												<a th:href="@{/vagas-editar/{id}(id=${v.id},idEmpresa=${v.empresa.id})}"
-												class="mx-1" title="Editar"> <i
-													class="bi bi-pencil-square"></i>
-												</a> <a th:href="@{/vagas-deletar/{id}(id=${v.id})}"
-													class="mx-1" title="Cancelar"
-													th:attr="onclick='return confirm(\'Deseja excluir a vaga \' + \'' + ${v.titulo} + '\' + \'?\')'">
-													<i class="bi bi-trash"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
+								<tr th:each="e : ${experiencias}">
+									<td th:text="${e.id}"></td>
+									<td th:text="${e.candidato.nome}"></td>
+									<td th:text="${e.nomeEmpresa}"></td>
+									<td th:text="${e.cargo}"></td>
+									<td th:text="${e.dataInicio}"></td>
+									<td th:text="${e.dataFim}"></td>
+									<td th:text="${e.candidato.id}"></td>
+								</tr>
 							</tbody>
 						</table>
 					</div>

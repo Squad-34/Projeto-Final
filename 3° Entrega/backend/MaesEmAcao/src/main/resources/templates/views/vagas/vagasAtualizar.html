@@ -42,11 +42,11 @@
 								<li class="nav-item"><a class="nav-link active"
 									href="/vagas">Vagas</a></li>
 								<li class="nav-item"><a class="nav-link active"
-									href="/contato">Contato</a></li>
+									href="/contatos">Contato</a></li>
 								<li class="nav-item"><a class="nav-link active"
-									href="/candidato">Candidato</a></li>
+									href="/candidatos">Candidato</a></li>
 								<li class="nav-item"><a class="nav-link active" 
-									href="/empresa">Empresas</a></li>
+									href="/empresas">Empresas</a></li>
 							</ul>
 					<div class="d-flex">
 						<a href="#" class="text-dark me-3"><i class="bi bi-facebook"></i></a>
@@ -62,13 +62,17 @@
 		<section class="conteiner-segundario">
 			<main>
 				<section class="section container titulos">
-					<form method="post" th:object="${vagas}" action="./vagas-atualizar" class="form-control">
+					<form method="post" th:with="vagas=${vagas}, idEmpresa=${idEmpresa}" action="./vagas-atualizar" class="form-control">
 						<fieldset>
 							<legend class="text-center h3">Atualizar Vaga</legend>
 							<div>
 								<label for="id">Id</label> <input type="text"
 									class="form-control" id="id" name="id"
 									th:value="${vagas.id}" readonly>
+							</div>
+							<div>
+								<label for="idEmpresa">Id Empresa</label> <input type="text"
+									class="form-control" id="idEmpresa" name="idEmpresa" th:value="${idEmpresa}" readonly>
 							</div>
 							<div>
 								<label for="titulo">Titulo</label> <input type="text"

@@ -10,8 +10,8 @@ import com.mvc.models.Vaga;
 
 public interface RepoCandidato extends JpaRepository<Candidato, Long> {
 
-	@EntityGraph(attributePaths = "endereco")
-	List<Candidato> findAll();
+	//@EntityGraph(attributePaths = "endereco")
+	//List<Candidato> findAll();
 
-	Iterable<Candidato> findByVaga(Vaga vaga);
+	//Iterable<Candidato> findByVaga(Vaga vaga);
 }

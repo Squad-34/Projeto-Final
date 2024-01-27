@@ -1,4 +1,4 @@
-package com.mvc.controllers;
+package com.mvc.controllers.empresa;
 
 import java.util.List;
 
@@ -22,8 +22,8 @@ public class EmpresaController {
 	@Autowired
 	private RepoEmpresa repoEmpresa;
 
-	@Autowired
-	private RepoVaga repoVaga;
+	//@Autowired
+	//private RepoVaga repoVaga;
 
 	@GetMapping
 	public ModelAndView empresa() {
@@ -36,9 +36,9 @@ public class EmpresaController {
 
 	@GetMapping("/cadastrar")
 	public ModelAndView cadastrarEmpresa() {
-		ModelAndView modelAndView = new ModelAndView("views/empresas/create");
+		ModelAndView modelAndView = new ModelAndView("views/empresas/empresasCadastrar.html");
 		modelAndView.addObject("empresas", new Empresa());
-		modelAndView.addObject("ufs", UF.values());
+		//modelAndView.addObject("ufs", UF.values());
 
 		return modelAndView;
 	}

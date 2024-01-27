@@ -5,8 +5,10 @@ import java.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -27,21 +29,20 @@ public class Experiencia extends Entidade {
 	@Column(name = "data_fim")
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate dataFim;
-	
-	@ManyToOne
+
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "fk_Candidato")
 	private Candidato candidato;
 
 	public Experiencia() {
 		super();
 	}
 
-	public Experiencia(String nomeEmpresa, String cargo, LocalDate dataInicio, LocalDate dataFim, Candidato candidato) {
-		super();
+	public Experiencia(String nomeEmpresa, String cargo, LocalDate dataInicio, LocalDate dataFim) {
 		this.nomeEmpresa = nomeEmpresa;
 		this.cargo = cargo;
 		this.dataInicio = dataInicio;
 		this.dataFim = dataFim;
-		this.candidato = candidato;
 	}
 
 	public String getNomeEmpresa() {
@@ -83,6 +84,5 @@ public class Experiencia extends Entidade {
 	public void setCandidato(Candidato candidato) {
 		this.candidato = candidato;
 	}
-
 
 }

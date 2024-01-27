@@ -64,32 +64,54 @@
 			<main>
 				<section class="container titulos">
 					<div class="p-4">
-						<a th:href="@{/empresas}" class="btn btn-dark mb-2 botoes">Voltar</a>
+						<a th:href="@{/candidatos/cadastrar}"
+							class="btn btn-dark mb-2 botoes">Novo</a> <a
+							th:href="@{/}" class="btn btn-dark mb-2 botoes">Voltar</a>
 						<table class="table table-responsive table-hover">
 							<thead class="table-dark">
 								<tr>
-									<th scope="col">Titulo</th>
-									<th scope="col">Descrição</th>
-									<th scope="col">Requisitos</th>
-									<th scope="col">Salário</th>
+									<th scope="col">Id</th>
+									<th scope="col">Nome</th>
+									<th scope="col">CPF</th>
+									<th scope="col">Telefone</th>
+									<th scope="col">Qtd Filhos</th>
+									<th scope="col">Email</th>
+									<th scope="col">Idioma</th>
+									<th scope="col">Formação</th>
+									<th scope="col">Data de Nascimentos</th>
 									<th scope="col">Atualizar / Deletar</th>
+									<th scope="col">Consultar Experiência</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr th:each="v : ${vagas}">
-										<td th:text="${v.titulo}"></td>
-										<td th:text="${v.descricao}"></td>
-										<td th:text="${v.requisitos}"></td>
-										<td th:text="${v.salario}"></td>
+								<tr th:each="c : ${candidatos}"> 
+									<td th:text="${c.id}"></td>
+									<td th:text="${c.nome}"></td>
+									<td th:text="${c.cpf}"></td>
+									<td th:text="${c.telefone}"></td>
+									<td th:text="${c.qtdFilhos}"></td>
+									<td th:text="${c.email}"></td>
+									<td th:text="${c.idioma}"></td>
+									<td th:text="${c.formacao}"></td>
+									<td th:text="${c.dataNascimento}"></td>
+									<td>
+										<div class="d-flex">
+											<a th:href="@{/candidatos/{id}(id=${c.id})}"
+												class="mx-1" title="Editar"> <i
+												class="bi bi-pencil-square"></i>
+											</a> <a th:href="@{/candidatos/{id}/deletar(id=${c.id})}"
+												class="mx-1" title="Cancelar"
+												th:attr="onclick='return confirm(\'Deseja excluir esse candidato \' + \'' + ${c.nome} + '\' + \'?\')'">
+												<i class="bi bi-trash"></i>
+											</a>
+										</div>
+									</td>
 										<td>
 											<div class="d-flex">
-												<a th:href="@{/vagas-editar/{id}(id=${v.id},idEmpresa=${v.empresa.id})}"
-												class="mx-1" title="Editar"> <i
-													class="bi bi-pencil-square"></i>
-												</a> <a th:href="@{/vagas-deletar/{id}(id=${v.id})}"
-													class="mx-1" title="Cancelar"
-													th:attr="onclick='return confirm(\'Deseja excluir a vaga \' + \'' + ${v.titulo} + '\' + \'?\')'">
-													<i class="bi bi-trash"></i>
+												<a th:href="@{/experiencias/{id}(id=${c.id})}"
+													class="icons-cards" title="Consultar Experiência"
+													th:attr="onclick='return confirm(\'Deseja consultar a experiencia do candidato \' + \'' + ${c.nome} + '\' + \'?\')'">
+													<i class="bi bi-search"></i>
 												</a>
 											</div>
 										</td>

@@ -1,6 +1,7 @@
 package com.mvc.models;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -28,52 +29,47 @@ public class Candidato extends Entidade {
 
 	@Column(nullable = false, length = 15)
 	private String telefone;
-	
+
 	@Column(nullable = false)
 	private int qtdFilhos;
 
 	@Column(nullable = false, length = 80, unique = true)
 	private String email;
-	
+
 	@Column(nullable = false, length = 80)
 	private String idioma;
-	
+
 	@Column(nullable = false, length = 80)
-	private String formação;
+	private String formacao;
 
 	@Column(name = "data_nascimento", nullable = false)
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate dataNascimento;
 
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "endereco_fk", nullable = false)
-	private Endereco endereco;
-	
-	@OneToMany(cascade = CascadeType.REMOVE)
-	@JoinColumn(name = "experiencia_fk", nullable = false)
-	private List <Experiencia> experiencias;
-	
-	@ManyToOne
-	private Vaga vaga;
+//	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//	@JoinColumn(name = "endereco_fk", nullable = false)
+//	private Endereco endereco;
+//	
+	@OneToMany(mappedBy = "candidato", orphanRemoval = true)
+	private List <Experiencia> experiencias = new ArrayList<>();
+//	
+//	@ManyToOne
+//	private Vaga vaga;
 
 	public Candidato() {
 		super();
 	}
 
 	public Candidato(String nome, String cpf, String telefone, int qtdFilhos, String email, String idioma,
-			String formação, LocalDate dataNascimento, Endereco endereco, List<Experiencia> experiencias, Vaga vaga) {
-		super();
+			String formacao, LocalDate dataNascimento) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.telefone = telefone;
 		this.qtdFilhos = qtdFilhos;
 		this.email = email;
 		this.idioma = idioma;
-		this.formação = formação;
+		this.formacao = formacao;
 		this.dataNascimento = dataNascimento;
-		this.endereco = endereco;
-		this.experiencias = experiencias;
-		this.vaga = vaga;
 	}
 
 	public String getNome() {
@@ -124,12 +120,12 @@ public class Candidato extends Entidade {
 		this.idioma = idioma;
 	}
 
-	public String getFormação() {
-		return formação;
+	public String getFormacao() {
+		return formacao;
 	}
 
-	public void setFormação(String formação) {
-		this.formação = formação;
+	public void setFormacao(String formacao) {
+		this.formacao = formacao;
 	}
 
 	public LocalDate getDataNascimento() {
@@ -139,30 +135,17 @@ public class Candidato extends Entidade {
 	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-
-	public List<Experiencia> getExperiencias() {
-		return experiencias;
-	}
-
-	public void setExperiencias(List<Experiencia> experiencias) {
-		this.experiencias = experiencias;
-	}
-
-	public Vaga getVaga() {
-		return vaga;
-	}
-
-	public void setVaga(Vaga vaga) {
-		this.vaga = vaga;
-	}
-
 	
+	public void addExperiencia(Experiencia experiencia) {
+		experiencias.add(experiencia);
+		experiencia.setCandidato(this);
+	}
+
+	public void removerExperiencia(Experiencia experiencia) {
+		experiencias.remove(experiencia);
+		experiencia.setCandidato(null);
+	}
+	
+	
+
 }

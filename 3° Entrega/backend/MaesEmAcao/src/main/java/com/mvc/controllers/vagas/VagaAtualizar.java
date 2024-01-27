@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mvc.models.Empresa;
 import com.mvc.models.Vaga;
 import com.mvc.repositories.RepoVaga;
 
@@ -21,7 +22,7 @@ public class VagaAtualizar {
 	private RepoVaga repoVaga;
 
 	@GetMapping("/{id}")
-	public ModelAndView vagasById(@PathVariable Long id) {
+	public ModelAndView vagasById(@PathVariable Long id, @RequestParam("idEmpresa") Long idEmpresa) {
 		ModelAndView model = new ModelAndView("views/vagas/vagasAtualizar.html");
 		Vaga vaga = repoVaga.findById(id).orElse(null);
 
@@ -29,21 +30,27 @@ public class VagaAtualizar {
 			return new ModelAndView("error/404");
 		}
 
+		// Adicione a vaga e o idEmpresa ao modelo
 		model.addObject("vagas", vaga);
+		model.addObject("idEmpresa", idEmpresa);
+
 		return model;
 	}
 
 	@PostMapping("/vagas-atualizar")
-	public ModelAndView atualizar(@ModelAttribute("vagas") Vaga vaga, @RequestParam("id") Long id) {
+	public ModelAndView atualizar(@ModelAttribute("vagas") Vaga vaga, @RequestParam("id") Long id,
+			@RequestParam("idEmpresa") Long idEmpresa) {
 		ModelAndView model = new ModelAndView("redirect:/vagas");
+		Empresa empresa = new Empresa();
+		empresa.setId(idEmpresa);
+		vaga.setEmpresa(empresa);
 		vaga.setId(id);
-		
-		if (vaga.getId() != null){
-			
-			model.addObject("clientes", repoVaga.save(vaga));
+
+		if (vaga.getId() != null && vaga.getEmpresa() != null) {
+
+			model.addObject("vagas", repoVaga.save(vaga));
 		}
-		
-		
+
 		return model;
 
 	}

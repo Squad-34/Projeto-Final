@@ -1,13 +1,10 @@
 package com.mvc.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -28,25 +25,21 @@ public class Empresa extends Entidade {
 	@Column(nullable = false, length = 80, unique = true)
 	private String email;
 
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "endereco_fk", nullable = false)
-	private Endereco endereco;
-	
-	@ManyToOne
-	private Vaga vaga;
+	@OneToMany(mappedBy = "empresa", orphanRemoval = true)
+	private List<Endereco> enderecos = new ArrayList<>();
+
+	@OneToMany(mappedBy = "empresa", orphanRemoval = true)
+	private List<Vaga> vagas = new ArrayList<>();
 
 	public Empresa() {
 		super();
 	}
 
-	public Empresa(String nome, String cnpj, String telefone, String email, Endereco endereco, Vaga vaga) {
-		super();
+	public Empresa(String nome, String cnpj, String telefone, String email) {
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.telefone = telefone;
 		this.email = email;
-		this.endereco = endereco;
-		this.vaga = vaga;
 	}
 
 	public String getNome() {
@@ -81,20 +74,24 @@ public class Empresa extends Entidade {
 		this.email = email;
 	}
 
-	public Endereco getEndereco() {
-		return endereco;
+	public void addVaga(Vaga vaga) {
+		vagas.add(vaga);
+		vaga.setEmpresa(this);
 	}
 
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
+	public void removerVaga(Vaga vaga) {
+		vagas.remove(vaga);
+		vaga.setEmpresa(this);
 	}
 
-	public Vaga getVaga() {
-		return vaga;
+	public void addEndereco(Endereco endereco) {
+		enderecos.add(endereco);
+		endereco.setEmpresa(this);
 	}
 
-	public void setVaga(Vaga vaga) {
-		this.vaga = vaga;
+	public void removerEndereco(Endereco endereco) {
+		enderecos.remove(endereco);
+		endereco.setEmpresa(this);
 	}
-	
+
 }

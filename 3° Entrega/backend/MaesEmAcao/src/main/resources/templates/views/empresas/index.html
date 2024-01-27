@@ -64,32 +64,45 @@
 			<main>
 				<section class="container titulos">
 					<div class="p-4">
-						<a th:href="@{/empresas}" class="btn btn-dark mb-2 botoes">Voltar</a>
+						<a th:href="@{/empresas/cadastrar}"
+							class="btn btn-dark mb-2 botoes">Novo</a> <a
+							th:href="@{/}" class="btn btn-dark mb-2 botoes">Voltar</a>
 						<table class="table table-responsive table-hover">
 							<thead class="table-dark">
 								<tr>
-									<th scope="col">Titulo</th>
-									<th scope="col">Descrição</th>
-									<th scope="col">Requisitos</th>
-									<th scope="col">Salário</th>
+									<th scope="col">Id</th>
+									<th scope="col">Nome</th>
+									<th scope="col">CNPJ</th>
+									<th scope="col">Telefone</th>
+									<th scope="col">Email</th>
 									<th scope="col">Atualizar / Deletar</th>
-								</tr>
+									<th scope="col">Cadastrar Vagas</th>
 							</thead>
 							<tbody>
-								<tr th:each="v : ${vagas}">
-										<td th:text="${v.titulo}"></td>
-										<td th:text="${v.descricao}"></td>
-										<td th:text="${v.requisitos}"></td>
-										<td th:text="${v.salario}"></td>
+									<tr th:each="e : ${empresas}">
+										<td th:text="${e.id}"></td>
+										<td th:text="${e.nome}"></td>
+										<td th:text="${e.cnpj}"></td>
+										<td th:text="${e.telefone}"></td>
+										<td th:text="${e.email}"></td>
 										<td>
 											<div class="d-flex">
-												<a th:href="@{/vagas-editar/{id}(id=${v.id},idEmpresa=${v.empresa.id})}"
-												class="mx-1" title="Editar"> <i
+												<a th:href="@{/empresa-editar?id=${e.empresa.idEmpresa}}"
+													class="mx-1" title="Editar"> <i
 													class="bi bi-pencil-square"></i>
-												</a> <a th:href="@{/vagas-deletar/{id}(id=${v.id})}"
+												</a> <a th:href="@{/empresas/{id}/excluir(id=${e.id})}"
 													class="mx-1" title="Cancelar"
-													th:attr="onclick='return confirm(\'Deseja excluir a vaga \' + \'' + ${v.titulo} + '\' + \'?\')'">
+													th:attr="onclick='return confirm(\'Deseja excluir a vaga \' + \'' + ${e.nome} + '\' + \'?\')'">
 													<i class="bi bi-trash"></i>
+												</a>
+											</div>
+										</td>
+										<td>
+											<div class="d-flex">
+												<a th:href="@{/vagas-cadastrar/{id}(id=${e.id})}"
+													class="icons-cards" title="Cadastrar Vagas"
+													onclick="return confirm('Deseja cadastrar nova vaga ${e.empresa.nome}?')">
+													<i class="bi bi-check-square"></i>
 												</a>
 											</div>
 										</td>

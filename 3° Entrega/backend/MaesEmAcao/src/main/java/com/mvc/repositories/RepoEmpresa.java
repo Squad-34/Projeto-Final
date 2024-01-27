@@ -9,8 +9,8 @@ import com.mvc.models.Empresa;
 import com.mvc.models.Vaga;
 
 public interface RepoEmpresa extends JpaRepository<Empresa, Long> {
-	@EntityGraph(attributePaths = "endereco")
+	//@EntityGraph(attributePaths = "endereco")
 	List<Empresa> findAll();
 
-	Iterable<Empresa> findByVaga(Vaga vaga);
+	//Iterable<Empresa> findByVaga(Vaga vaga);
 }
