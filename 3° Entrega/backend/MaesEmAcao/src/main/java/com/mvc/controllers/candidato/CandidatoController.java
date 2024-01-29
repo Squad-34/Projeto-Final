@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mvc.enums.UF;
 import com.mvc.models.Candidato;
 import com.mvc.models.Experiencia;
 import com.mvc.repositories.RepoCandidato;
@@ -43,7 +42,6 @@ public class CandidatoController {
 	public ModelAndView cadastrarCandidato() {
 		ModelAndView modelAndView = new ModelAndView("views/candidatos/candidatosCadastrar.html");
 		modelAndView.addObject("candidatos", new Candidato());
-		// modelAndView.addObject("ufs", UF.values());
 		modelAndView.addObject("experiencias", new Experiencia());
 
 		return modelAndView;
@@ -115,3 +113,4 @@ public class CandidatoController {
 	}
 
 }
+
