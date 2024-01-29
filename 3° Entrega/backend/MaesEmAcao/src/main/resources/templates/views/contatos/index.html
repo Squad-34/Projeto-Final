@@ -39,12 +39,12 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navVagas">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-                           <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-                           <li class="nav-item"><a class="nav-link active" href="/candidatos">Candidatos</a></li>
-                           <li class="nav-item"><a class="nav-link active" href="/empresas">Empresas</a></li>
-                           <li class="nav-item"><a class="nav-link active" href="/vagas">Vagas</a></li>
-                           <li class="nav-item"><a class="nav-link active" href="/contatos">Contato</a></li>
-                        </ul>
+                         <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                         <li class="nav-item"><a class="nav-link active" href="/candidatos">Candidatos</a></li>
+                         <li class="nav-item"><a class="nav-link active" href="/empresas">Empresas</a></li>
+                         <li class="nav-item"><a class="nav-link active" href="/vagas">Vagas</a></li>
+                         <li class="nav-item"><a class="nav-link active" href="/contatos">Contato</a></li>
+                     </ul>
 					<div class="d-flex">
 						<a href="#" class="text-dark me-3"><i class="bi bi-facebook"></i></a>
 						<a href="#" class="text-dark me-3"><i class="bi bi-instagram"></i></a>
@@ -59,35 +59,11 @@
 		<section class="conteiner-segundario">
 			<main>
 				<section class="section container titulos">
-					<form method="post" th:with="vagas=${vagas}, empresas=${empresas}" action="/vagas-cadastrar/salvar" class="form-control">
-						<fieldset>
-							<legend class="text-center h3">Cadastrar Vaga</legend>
-							<div>
-								<label for="id">Id Empresa</label> <input type="text"
-									class="form-control" id="id" name="id" th:field="${empresas.id}" readonly>
-							</div>
-							<div>
-								<label for="titulo">Titulo</label> <input type="text"
-									class="form-control" id="titulo" name="titulo" th:field="${vagas.titulo}">
-							</div>
-							<div>
-								<label for="descricao">Descrição</label> <input type="text"
-									class="form-control" id="descricao" name="descricao" th:field="${vagas.descricao}">
-							</div>
-							<div>
-								<label for="requisito">Requisitos</label> <input type="text"
-									class="form-control" id="requisito" name="requisito" th:field="${vagas.requisitos}">
-							</div>
-							<div>
-								<label for="salario">Salário</label> <input type="number"
-									class="form-control" id="salario" name="salario" th:field="${vagas.salario}">
-							</div>
-							<div>
-								<button type="submit" class="btn btn-secondary mt-2 text-white botoes">Cadastrar</button>
-
-								<a th:href="@{/vagas}" class="btn btn-secondary mt-2 text-white botoes">Cancelar</a>
-							</div>
-						</fieldset>
+					<a th:href="@{/}" class="btn btn-secondary mb-3 text-white botoes">Voltar</a>
+					<form method="post" action="**" class="form-control">
+						<div>
+							<h1 class="text-center">EM DESENVOLVIMENTO</h1>
+						</div>
 					</form>
 				</section>
 			</main>

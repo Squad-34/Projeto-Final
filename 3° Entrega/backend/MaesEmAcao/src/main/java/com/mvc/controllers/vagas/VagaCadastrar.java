@@ -41,7 +41,7 @@ public class VagaCadastrar {
 		vaga.setEmpresa(idEmpresa);
 		if (idEmpresa != null) {
 			vaga.setEmpresa(idEmpresa);
-			repoVaga.save(vaga);
+			repoVaga.saveAndFlush(vaga);
 		}
 		return model;
 	}

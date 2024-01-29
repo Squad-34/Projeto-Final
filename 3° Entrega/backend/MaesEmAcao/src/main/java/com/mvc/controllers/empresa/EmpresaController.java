@@ -54,6 +54,7 @@ public class EmpresaController {
 		if (empresa == null) {
 			return new ModelAndView("error/404");
 		}
+		modelAndView.addObject("empresas", empresa);
 		return modelAndView;
 	}
 
