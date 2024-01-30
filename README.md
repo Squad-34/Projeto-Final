@@ -72,6 +72,5 @@ Sinta-se à vontade para contribuir para este projeto. Se você quiser propor me
 4. Faça push para a branch (`git push origin feature/nova-feature`).
 5. Abra um Pull Request.
 
-![Uploading image.png…]()
 
 
